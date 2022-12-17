@@ -14,7 +14,7 @@ apps:
   flux:
     command: bin/flux
     environment:
-      KUBECONFIG: /home/$USER/.kube/config
+      KUBECONFIG: /home/$USER/kube/config
     plugs: 
       - home
 
