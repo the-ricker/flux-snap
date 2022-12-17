@@ -1,0 +1,32 @@
+name: flux 
+base: core20 
+version: '0.37.0' 
+summary: GitOps for both apps and infrastructure 
+description: |
+  Flux is a tool for keeping Kubernetes clusters in sync with sources of configuration 
+  (like Git repositories and OCI artifacts), and automating updates to configuration 
+  when there is new code to deploy.
+
+grade: stable 
+confinement: strict 
+
+apps:
+  flux:
+    command: bin/flux
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+
+parts:
+  flux:
+    plugin: dump
+    stage-packages:
+      - git
+    source:
+      - on amd64: https://github.com/fluxcd/flux2/releases/download/v$SNAPCRAFT_PROJECT_VERSION/flux_$SNAPCRAFT_PROJECT_VERSION_linux_amd64.tar.gz
+      - on arm64: https://github.com/fluxcd/flux2/releases/download/v$SNAPCRAFT_PROJECT_VERSION/flux_$SNAPCRAFT_PROJECT_VERSION_linux_arm64.tar.gz
+    organize:
+      flux: bin/flux
+    stage:
+      - bin/flux
