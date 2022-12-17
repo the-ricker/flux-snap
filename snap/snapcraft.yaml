@@ -32,3 +32,5 @@ parts:
       flux: bin/flux
     stage:
       - bin/flux
+    plugs: &plugs
+      - home
