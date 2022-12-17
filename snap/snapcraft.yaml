@@ -13,6 +13,8 @@ confinement: strict
 apps:
   flux:
     command: bin/flux
+    environment:
+      KUBECONFIG: /home/$USER/.kube/config
 
 architectures:
   - build-on: amd64
