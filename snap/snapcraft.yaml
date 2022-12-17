@@ -17,6 +17,8 @@ apps:
       KUBECONFIG: /home/$USER/kube/config
     plugs: 
       - home
+      - kubernetes-support
+      - network
 
 architectures:
   - build-on: amd64
