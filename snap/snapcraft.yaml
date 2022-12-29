@@ -1,6 +1,6 @@
 name: flux 
 base: core22 
-version: '0.37.0' 
+version: '0.38.2' 
 summary: GitOps for both apps and infrastructure 
 description: |
   Flux is a tool for keeping Kubernetes clusters in sync with sources of configuration 
